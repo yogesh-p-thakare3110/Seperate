@@ -1,4 +1,4 @@
-module github.com/yogesh-p-thakare/Seprate
+module github.com/yogesh-p-thakare/Seperate
 
 go 1.17
 
