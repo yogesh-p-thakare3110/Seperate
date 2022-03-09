@@ -8,11 +8,11 @@ import (
 func HandlerRouting() *mux.Router {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/movies", handler.getMovie).Methods("GET")
+	r.HandleFunc("/movies", handler.GetMovie).Methods("GET")
 	r.HandleFunc("/movies/{id}", handler.GetMovie).Methods("GET")
-	r.HandleFunc("/movies", handler.createMovie).Methods("POST")
-	r.HandleFunc("/movies/{id}", handler.updateMovie).Methods("PUT")
-	r.HandleFunc("/movies/{id}", handler.deleteMovie).Methods("DELETE")
+	r.HandleFunc("/movies", handler.CreateMovie).Methods("POST")
+	r.HandleFunc("/movies/{id}", handler.UpdateMovie).Methods("PUT")
+	r.HandleFunc("/movies/{id}", handler.DeleteMovie).Methods("DELETE")
 
 	return r
 }
