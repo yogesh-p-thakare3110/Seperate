@@ -10,12 +10,12 @@ import (
 	"github.com/yogesh-p-thakare3110/Seperate/movie"
 )
 
-func getMovie(w http.ResponseWriter, r *http.Request) {
+func GetMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(movie.Movies)
 }
 
-func deleteMovie(w http.ResponseWriter, r *http.Request) {
+func DeleteMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	for index, item := range movie.Movies {
@@ -38,7 +38,7 @@ func GetMovie(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func createMovie(w http.ResponseWriter, r *http.Request) {
+func CreateMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content_Type", "application/json")
 	var movie movie.Movie
 	_ = json.NewDecoder(r.Body).Decode(&movie)
@@ -47,7 +47,7 @@ func createMovie(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(movie)
 }
 
-func updateMovie(w http.ResponseWriter, r *http.Request) {
+func UpdateMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 
